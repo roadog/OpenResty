@@ -6,7 +6,7 @@ MAINTAINER huaxiujun <huaxiujun@aliyun.com>
 ENV OPEN_RESTY_VERSION 1.9.3.1
 
 RUN apt-get update && \
-    apt-get install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential
+    apt-get install -y libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential
 
 #download openresty
 ADD https://openresty.org/download/ngx_openresty-$OPEN_RESTY_VERSION.tar.gz ./

@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential
 
 #download openresty
-ADD https://openresty.org/download/ngx_openresty-$OPEN_RESTY_VERSION.tar.gz
+ADD https://openresty.org/download/ngx_openresty-$OPEN_RESTY_VERSION.tar.gz ./
 
 # make && lean up system
 RUN cd ngx_openresty-$OPEN_RESTY_VERSION && \

@@ -12,10 +12,10 @@ RUN apt-get update && \
 ADD https://openresty.org/download/ngx_openresty-$OPEN_RESTY_VERSION.tar.gz ./
 
 # make && lean up system
-RUN cd ngx_openresty-$OPEN_RESTY_VERSION && \
+RUN tar zxf ngx_openresty-$OPEN_RESTY_VERSION.tar.gz && \
+    cd ngx_openresty-$OPEN_RESTY_VERSION && \
     ./configure --with-pcre-jit && \
-    make && make install && \
-    cd .. && \
+    make && make install && cd .. && \
     apt-get clean && rm -rf /tmp/* /var/tmp/* && rm -rf /var/lib/apt/lists/* && \
     rm -rf ngx_openresty-$OPEN_RESTY_VERSION && rm ngx_openresty-$OPEN_RESTY_VERSION.tar.gz
 
